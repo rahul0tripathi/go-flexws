@@ -1,0 +1,21 @@
+namespace serverCmd;
+
+enum ServerCmd : int{ EMPTY,JOINEDUSERCOUNT,ERR }
+
+table JoinedUserCount {
+    Id:string;
+    JoinedUsers:uint16;
+}
+
+table Err {
+    Message:string;
+    Code:string;
+}
+union Message { Err,JoinedUserCount }
+
+table ServerEvent {
+    Cmd:ServerCmd;
+    Payload:Message;
+}
+
+root_type ServerEvent;

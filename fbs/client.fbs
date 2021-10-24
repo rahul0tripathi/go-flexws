@@ -1,0 +1,8 @@
+namespace clientCmd;
+
+enum ClientCmd : byte{ DEFAULT=0 }
+
+table ClientEvent {
+    Event:ClientCmd;
+    }
+root_type ClientEvent;

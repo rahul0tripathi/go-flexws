@@ -1,0 +1,16 @@
+kind: pipeline
+type: docker
+name: fastwsbuild
+steps:
+  - name: publish
+    image: plugins/ecr
+    settings:
+      dockerfile: build/package/production.dockerfile
+      tags:
+        - v0.0.${DRONE_BUILD_NUMBER}
+    when:
+      branch:
+        include:
+          - master
+      event:
+        - push

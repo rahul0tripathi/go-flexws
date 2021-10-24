@@ -1,0 +1,26 @@
+{
+  "env": "local",
+  "port": ":6789",
+  "debug": true,
+  "cache": {
+    "host": "127.0.0.1:6379",
+    "password": "local"
+  },
+  "datastore": {
+    "host": "127.0.0.1",
+    "password": ""
+  },
+  "amqp": {
+    "host": "127.0.0.1",
+    "password": "world",
+    "username": "hello",
+    "port": "5672"
+  },
+  "roomQueue": {
+    "exchange": "roomExchange",
+    "exchangeType": "direct",
+    "name": "roomQueue:",
+    "consumer": "roomConsumer:",
+    "bind": ["room.new","room.joined.update"]
+  }
+}
